@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image changer</title>
+    <style>
+        body{
+            background-color: black;
+            color: wheat;
+             /* align-items: center; */
+             text-align: center;
+        }
+       
+        .image-container{
+          /* border: 5px solid red;  */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          /* padding: ;  */
+        
+
+        }
+        
+        /* img.addEventListener('') */
+
+        .image-container img{
+            border: 2px solid red;
+            height: 300px;
+            margin-top: 15px;
+        }
+        .image-container h2{
+            padding: 10px;
+            background-color: yellow;
+            color: black;
+            border-radius: 10px;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image changer</h1>
+    <div class="image-container">
+        <img src="https://cdn.pixabay.com/photo/2022/08/21/14/32/london-7401433_1280.jpg" alt="">
+        <h2>london</h2>
+    </div>
+
+    <script>
+         let img= document.querySelector('img')
+         let h2= document.querySelector('h2')
+         let preText= h2.innerText
+         let preSrc= img.src
+   
+          img.addEventListener('mouseover',() =>{
+            img.src ='https://cdn.pixabay.com/photo/2013/02/25/20/25/church-86120_1280.jpg'
+            h2.innerText ='parish';
+            img.style.border='1px solid yellow'
+            img.style.borderRadius='15px'
+          })
+    
+           img.addEventListener('mouseleave',()=>{
+            img.src='https://cdn.pixabay.com/photo/2022/08/21/14/32/london-7401433_1280.jpg'
+            h2.innerHTML='london'
+            img.style.border='1px solid blue'
+               img.style.borderRadius='85px'
+           })
+    </script>
+</body>
+</html>
